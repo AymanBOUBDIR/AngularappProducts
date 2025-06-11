@@ -1,59 +1,87 @@
 # EnsetApp
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
+Ce projet a été généré avec [Angular CLI](https://github.com/angular/angular-cli) version 20.0.0.
 
-## Development server
+## Serveur de développement
 
-To start a local development server, run:
+Pour démarrer un serveur de développement local, exécutez :
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Une fois le serveur lancé, ouvrez votre navigateur et accédez à `http://localhost:4200/`. L’application se rechargera automatiquement lorsque vous modifiez les fichiers sources.
 
-## Code scaffolding
+## Génération de code
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Angular CLI inclut des outils de génération de code puissants. Pour générer un nouveau composant, utilisez :
 
 ```bash
-ng generate component component-name
+ng generate component nom-du-composant
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Pour voir la liste complète des schémas disponibles (`components`, `directives`, `pipes`, etc.), exécutez :
 
 ```bash
 ng generate --help
 ```
 
-## Building
+## Compilation
 
-To build the project run:
+Pour compiler le projet, lancez :
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Cela va compiler le projet et stocker les artefacts de build dans le répertoire `dist/`. Par défaut, la compilation en mode production optimise les performances et la rapidité de l’application.
 
-## Running unit tests
+## Exécution des tests unitaires
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Pour exécuter les tests unitaires avec le framework [Karma](https://karma-runner.github.io), utilisez :
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## Exécution des tests end-to-end
 
-For end-to-end (e2e) testing, run:
+Pour effectuer des tests end-to-end (e2e), exécutez :
 
 ```bash
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Angular CLI ne fournit pas de framework de test end-to-end par défaut. Vous pouvez choisir celui qui correspond le mieux à vos besoins.
 
-## Additional Resources
+## Ressources supplémentaires
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Pour plus d’informations sur l’utilisation de l’Angular CLI et les références complètes des commandes, visitez la page [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli).
+
+## Description des composants principaux
+
+### Composant Products
+
+Le composant `Products` est conçu pour la gestion des produits dans l'application. Voici ses principales fonctionnalités :
+
+- **Affichage des produits** : Il récupère une liste de produits via un service Angular et les affiche dans l’interface utilisateur.
+- **Suppression de produits** : Il permet de supprimer un produit après confirmation de l’utilisateur. Une fois supprimé, la liste des produits est automatiquement mise à jour.
+- **Cycle de vie Angular** : Il utilise `ngOnInit` pour récupérer les produits lors de l’initialisation.
+- **Service de données** : Il interagit avec la classe/service `Product` pour gérer les données des produits.
+
+### Configuration de l'application avec `app.config.ts`
+
+Le fichier `app.config.ts` configure les services et fonctionnalités globales de l'application. Il gère :
+
+- **Les routes de l’application** : Configuration via `provideRouter`.
+- **La gestion des erreurs globales** : Interception et gestion des erreurs.
+- **Le client HTTP d'Angular** : Intégration pour effectuer des requêtes HTTP vers les APIs.
+- **Optimisation des performances** : Activation des changements zonés avec `eventCoalescing`.
+
+### Demarrage App Backend  and front 
+![img.png](img.png)
+### interface front-end
+![img_1.png](img_1.png)
+### suppresion d'un produit 
+![img_2.png](img_2.png)
+![img_3.png](img_3.png)
